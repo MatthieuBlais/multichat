@@ -5,6 +5,7 @@
  */
 package chat.Client;
 
+import chat.Internationalization;
 import java.io.IOException;
 import static java.lang.Thread.MIN_PRIORITY;
 import java.net.DatagramPacket;
@@ -94,8 +95,8 @@ public class MultiCastReceiver implements Runnable {
       }
     } catch (IOException ioe) {
      Alert a = new Alert(AlertType.ERROR);
-          a.setTitle("Error Dialog");
-          a.setHeaderText("Error");
+          a.setTitle(Internationalization.get("my.error"));
+          a.setHeaderText(Internationalization.get("my.error2"));
           a.setContentText(ioe.getMessage());
           if(b)
               System.out.println(ioe.getMessage());
@@ -184,10 +185,10 @@ public class MultiCastReceiver implements Runnable {
     
     public boolean nick(String s, String id) {
         if(id != null && s != null){
-            System.out.println("eheh");
+        //    System.out.println("eheh");
         String[] string = s.split("> ");
         if (string.length > 1) {
-            System.out.println(id + " et " + string[0] +" ff");
+     //       System.out.println(id + " et " + string[0] +" ff");
                 collection.put(id, string[0]);
                 return true;
         }

@@ -69,7 +69,7 @@ public class MultiCastSender {
 
                             socket.send(outPacket);
                         } else {
-                            text = ID + ">/<" + name + "</>" + prev + " has changed his name in " + name;
+                            text = ID + ">/<" + name + "</>" + prev + Internationalization.get("my.change") + name;
                             outBuf = text.getBytes();
                             outPacket = new DatagramPacket(outBuf, outBuf.length, addresse, port);
 
@@ -78,9 +78,15 @@ public class MultiCastSender {
                     }                
                     socket.close();
                 } catch (UnknownHostException ex) {
+                    Alert a = new Alert(AlertType.ERROR);
+                    a.setTitle(Internationalization.get("my.error"));
+                    a.setHeaderText(Internationalization.get("my.error2"));
                     if(debug)
                     Logger.getLogger(MultiCastSender.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
+                    Alert a = new Alert(AlertType.ERROR);
+                    a.setTitle(Internationalization.get("my.error"));
+                    a.setHeaderText(Internationalization.get("my.error2"));
                     if(debug)
                     Logger.getLogger(MultiCastSender.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -117,8 +123,8 @@ public class MultiCastSender {
 
         } catch (UnknownHostException ex) {
             Alert a = new Alert(AlertType.ERROR);
-          a.setTitle("Error Dialog");
-          a.setHeaderText("Look, an Error Dialog");
+          a.setTitle(Internationalization.get("my.error"));
+                    a.setHeaderText(Internationalization.get("my.error2"));
           a.setContentText(ex.getMessage());
 
           a.showAndWait();
@@ -126,8 +132,8 @@ public class MultiCastSender {
             Logger.getLogger(MultiCastSender.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Alert a = new Alert(AlertType.ERROR);
-          a.setTitle("Error Dialog");
-          a.setHeaderText("Look, an Error Dialog");
+          a.setTitle(Internationalization.get("my.error"));
+                    a.setHeaderText(Internationalization.get("my.error2"));
           a.setContentText(ex.getMessage());
 
           a.showAndWait();
@@ -153,8 +159,8 @@ public class MultiCastSender {
 
         } catch (UnknownHostException ex) {
             Alert a = new Alert(AlertType.ERROR);
-          a.setTitle("Error Dialog");
-          a.setHeaderText("Look, an Error Dialog");
+         a.setTitle(Internationalization.get("my.error"));
+                    a.setHeaderText(Internationalization.get("my.error2"));
           a.setContentText(ex.getMessage());
 
           a.showAndWait();
@@ -162,8 +168,8 @@ public class MultiCastSender {
             Logger.getLogger(MultiCastSender.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Alert a = new Alert(AlertType.ERROR);
-          a.setTitle("Error Dialog");
-          a.setHeaderText("Look, an Error Dialog");
+          a.setTitle(Internationalization.get("my.error"));
+                    a.setHeaderText(Internationalization.get("my.error2"));
           a.setContentText(ex.getMessage());
 
           a.showAndWait();
@@ -193,8 +199,8 @@ public class MultiCastSender {
 
         } catch (UnknownHostException ex) {
             Alert a = new Alert(AlertType.ERROR);
-          a.setTitle("Error Dialog");
-          a.setHeaderText("Look, an Error Dialog");
+          a.setTitle(Internationalization.get("my.error"));
+                    a.setHeaderText(Internationalization.get("my.error2"));
           a.setContentText(ex.getMessage());
 
           a.showAndWait();
@@ -202,8 +208,8 @@ public class MultiCastSender {
             Logger.getLogger(MultiCastSender.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Alert a = new Alert(AlertType.ERROR);
-          a.setTitle("Error Dialog");
-          a.setHeaderText("Look, an Error Dialog");
+         a.setTitle(Internationalization.get("my.error"));
+                    a.setHeaderText(Internationalization.get("my.error2"));
           a.setContentText(ex.getMessage());
 
           a.showAndWait();

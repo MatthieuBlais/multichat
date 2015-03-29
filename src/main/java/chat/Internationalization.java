@@ -16,9 +16,9 @@ public class Internationalization {
     public static ResourceBundle bundle;
     public static void main ()
     {
-     //   Locale defaultLocale = new Locale("fr","FR");
-                Locale.getDefault();
-        bundle = ResourceBundle.getBundle("Trad", Locale.getDefault());
+        Locale defaultLocale = new Locale("fr","FR");
+                //Locale.getDefault();
+        bundle = ResourceBundle.getBundle("Trad", defaultLocale);
     }
     
     public static String get(String t) 

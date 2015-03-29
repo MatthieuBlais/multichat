@@ -116,7 +116,7 @@ public class NIOChatServer extends AbstractMultichatServer implements Runnable {
         SocketChannel sc = ((ServerSocketChannel) key.channel()).accept();
 
         nickMap.put(sc, Internationalization.get("my.guest"));
-        System.err.println("jai ajoute " + nickMap.get(sc));
+      //  System.err.println("jai ajoute " + nickMap.get(sc));
 
         sc.configureBlocking(false);
         sc.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE, getAddress());
@@ -178,7 +178,7 @@ public class NIOChatServer extends AbstractMultichatServer implements Runnable {
                                 msg = tmp[0] + "~~&~&" + nickMap.get(ch) + "@~~@~~ aze";
                             } else if (tmp[1].equals("/Iconnect/")) {
 
-                                System.out.println("BALALALAsdfsdfsd");
+             //                   System.out.println("BALALALAsdfsdfsd");
                                 msg = tmp[0] + "~~&~&" + nickMap.get(ch) + "&~=====>" + nickMap.get(ch) +" " + Internationalization.get("my.hasjoin");
 
                             } else if (tmp[1].equals("/Ileave/")) {

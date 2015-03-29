@@ -5,6 +5,7 @@
  */
 package chat.Client;
 
+import chat.Internationalization;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,8 +44,8 @@ public class ClientSocket {
             out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
         } catch (IOException ioe) {
             Alert al = new Alert(AlertType.ERROR);
-          al.setTitle("Error Dialog");
-          al.setHeaderText("Look, an Error Dialog");
+          al.setTitle(Internationalization.get("my.error"));
+          al.setHeaderText(Internationalization.get("my.error2"));
           al.setContentText(ioe.getMessage());
 
           al.showAndWait();
@@ -76,8 +77,8 @@ public class ClientSocket {
             socket.close();
         } catch (IOException ex) {
           Alert a = new Alert(AlertType.ERROR);
-          a.setTitle("Error Dialog");
-          a.setHeaderText("Error");
+          a.setTitle(Internationalization.get("my.error"));
+          a.setHeaderText(Internationalization.get("my.error2"));
           a.setContentText(ex.getMessage());
 
           a.showAndWait();
